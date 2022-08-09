@@ -1,0 +1,13 @@
+
+
+
+##
+ POST http://localhost:3000/funcionario HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Wellingto Alves",
+    "email": "wellingtonalves@..."
+}
+
+##

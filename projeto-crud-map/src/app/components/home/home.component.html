@@ -1,0 +1,74 @@
+
+
+<h2 class="mt-5">Cadastrar Novo Funcionário</h2>
+<div class="container mt-5 mb-5">
+<div class="row">
+    <div class="col-6">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img src="https://www.mapinnovation.com.br/wp-content/uploads/2020/08/iot-se.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://enterprisetalk.com/wp-content/uploads/2019/06/How-Augmented-Reality-Simplifies-Manufacturing-Processes.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://bigthink.com/wp-content/uploads/2022/05/AdobeStock_396113173.jpeg" class="d-block w-100" alt="">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+    </div>
+<div class="col-6">
+<form [formGroup]="FormFuncionarioMap">
+  <div>
+    <p class="color-red">Todos os campos são obrigatórios.</p>
+  </div>
+    <div class="row">
+            <label for="nome" class="form-label">Nome completo</label> <span class="color-red">*</span>
+            <input type="email" formControlName="nome_funcionario" class="form-control" id="nome">
+
+            <label for="email" class="form-label">E-mail</label> <span class="color-red">*</span>
+            <input type="email" formControlName="email_funcionario" class="form-control" id="email">
+    </div>
+  <div class="row">
+    <div class="col-md-6">
+        <label for="contato" class="form-label">Contato</label> <span class="color-red">*</span>
+        <input type="contato" formControlName="contato_funcionario" class="form-control" id="contato" placeholder="(xx) xxx-xxxxxx">
+    </div>
+    <div class="col-md-6">
+        <label for="cargo" class="form-label">Cargo</label> <span class="color-red">*</span>
+        <input type="cargo" formControlName="cargo_funcionario" class="form-control" id="cargo">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <label for="inputAddress" class="form-label">Endereço</label> <span class="color-red">*</span>
+        <input type="text" formControlName="endereco_funcionario" class="form-control" id="inputAddress" placeholder="Rua x , N° x, Bairro x">
+      </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <label for="cidade" class="form-label">Cidade</label> <span class="color-red">*</span>
+        <input type="text" formControlName="cidade_funcionario" class="form-control" id="cidade">
+      </div>
+      <div class="col-md-6">
+          <label for="estado" class="form-label">Estado</label> <span class="color-red">*</span>
+          <input type="text" formControlName="estado_funcionario" class="form-control" id="estado">
+        </div>
+</div>
+
+    <div class="col-12 mt-5">
+      <button [disabled]="FormFuncionarioMap.invalid" type="submit" class="btn btn-primary "(click)="cadastrar_funcionario()">Cadastrar</button>
+    </div>
+
+  </form>
+</div>
+</div>
+</div>
+    

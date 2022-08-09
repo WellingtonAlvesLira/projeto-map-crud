@@ -1,0 +1,11 @@
+#img-logo{
+    height: 60px;
+}
+
+.cor-text{
+    color: white;
+}
+
+.cor-text:hover{
+    color: blue;
+}
