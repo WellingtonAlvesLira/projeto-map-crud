@@ -10,7 +10,6 @@ import { FuncionarioMapService } from './funcionario-map.service';
 export class FuncionarioMapComponent implements OnInit {
 
   funcionarioMap: Funcionario [];
-  
   constructor(private funcionarioService: FuncionarioMapService) { }
 
   ngOnInit() {

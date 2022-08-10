@@ -1,6 +1,9 @@
 
 
 <h2 class="mt-5">Cadastrar Novo Funcionário</h2>
+<div id="showMsg">
+  <p>{{ message }}<p>
+</div>
 <div class="container mt-5 mb-5">
 <div class="row">
     <div class="col-6">
@@ -66,7 +69,6 @@
     <div class="col-12 mt-5">
       <button [disabled]="FormFuncionarioMap.invalid" title="Você precisa preencher todos os campos, para o botão cadastrar ficar HABILITADO !" type="submit" class="btn btn-primary "(click)="cadastrar_funcionario()">Cadastrar</button>
     </div>
-
   </form>
 </div>
 </div>

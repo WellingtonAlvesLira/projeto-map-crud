@@ -15,8 +15,7 @@ export class HomeComponent implements OnInit {
 
   private FormFuncionarioMap: FormGroup;
   funcionarioMap : Funcionario [];
-  msg: "";
-  showMsg: false;
+  message = '';
 
   constructor( private FormBuilder: FormBuilder, private homeService: HomeService) {
     this.FormFuncionarioMap = this.FormBuilder.group({
@@ -39,7 +38,8 @@ export class HomeComponent implements OnInit {
  cadastrar_funcionario(){
      if(this.FormFuncionarioMap.value !== ''){
       this.homeService.cadastrar_funcionario(this.FormFuncionarioMap.value).subscribe();
-      alert('Cadastrado com sucesso!');
+      this.message = 'Funcionário cadastrado com sucesso'
+      setTimeout(() => this.message = "", 4000);
       this.limpar_form()
      }else{
       alert('Error ao salvar')

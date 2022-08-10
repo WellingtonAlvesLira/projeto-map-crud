@@ -1,3 +1,11 @@
 .color-red{
     color: red;
 }
+
+#showMsg{
+    margin: auto;
+    width: 50%;
+    background-color: rgb(177, 219, 177);
+    color: green;
+
+}
