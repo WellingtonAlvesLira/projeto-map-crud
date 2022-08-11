@@ -1,6 +1,10 @@
 <div container-fluid>
+  <div class="mt-5">
+    <p id="showMsg">{{message}}</p>
+  </div>
 <table class="table">
   <thead>
+
     <tr>
       <th scope="col">ID</th>
       <th scope="col">NOME</th>
@@ -21,8 +25,9 @@
       <td>{{funcionario.cargo_funcionario}}</td>
       <td>{{funcionario.endereco_funcionario}}</td>
       <td>{{funcionario.cidade_funcionario}}</td>
-      <td><button (click)="delete_funcionario(funcionario.id)">Deletar</button></td>
+      <td><button (click)="delete_funcionario(funcionario.id, funcionario.nome_funcionario)">Deletar</button></td>
       <td><button (click)="edit_funcionario(funcionario.id)">Editar</button></td>
+
 
       <!-- <td>{{funcionario.estado}}</td> -->
     </tr>

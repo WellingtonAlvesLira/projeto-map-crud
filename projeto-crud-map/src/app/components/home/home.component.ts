@@ -14,6 +14,7 @@ import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
 export class HomeComponent implements OnInit {
 
   private FormFuncionarioMap: FormGroup;
+
   funcionarioMap : Funcionario [];
   message = '';
 
@@ -38,8 +39,7 @@ export class HomeComponent implements OnInit {
  cadastrar_funcionario(){
      if(this.FormFuncionarioMap.value !== ''){
       this.homeService.cadastrar_funcionario(this.FormFuncionarioMap.value).subscribe();
-      this.message = 'Funcionário cadastrado com sucesso'
-      setTimeout(() => this.message = "", 4000);
+      this.showMsg();
       this.limpar_form()
      }else{
       alert('Error ao salvar')
@@ -47,13 +47,22 @@ export class HomeComponent implements OnInit {
 
  }
 
- valid_form(input: FormControl){
-   return (input.value ? null : {obrigatorio: true})
- }
 
+
+ //FUNCTION ISOLADAS
  limpar_form(){
   this.FormFuncionarioMap.reset()
  }
+  
+  showMsg(){  
+  let nome = this.FormFuncionarioMap.get('nome_funcionario').value
+  this.message = `Funcionário ${nome} cadastrado com sucesso`
+  setTimeout(() => this.message = "", 4000);
+ }
+
+ valid_form(input: FormControl){
+  return (input.value ? null : {obrigatorio: true})
+}
 
 
 }

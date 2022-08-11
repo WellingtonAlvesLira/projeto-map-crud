@@ -10,6 +10,7 @@ import { FuncionarioMapService } from './funcionario-map.service';
 export class FuncionarioMapComponent implements OnInit {
 
   funcionarioMap: Funcionario [];
+  message = '';
   constructor(private funcionarioService: FuncionarioMapService) { }
 
   ngOnInit() {
@@ -20,18 +21,21 @@ export class FuncionarioMapComponent implements OnInit {
     this.funcionarioService.list_funcionario().subscribe(res => this.funcionarioMap = res)
   }
 
-  delete_funcionario(id){
-    if (window.confirm("Tem certeza?")) {
+  delete_funcionario(id,nome){
       this.funcionarioService.delete_funcionario(id).subscribe();
-      alert("Funcionário deletado com sucesso!");
+      this.showMsg(nome);
       this.listar_funcionario();
-    }
 
 
   }
 
   edit_funcionario(id){
    alert(id)     
+  }
+
+  showMsg(nome){
+    this.message = `Funcionário ${nome} deletado com sucesso!`
+    setTimeout(() => this.message = "", 4000);
   }
 
 
