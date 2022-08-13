@@ -17,6 +17,13 @@ export class HomeComponent implements OnInit {
 
   funcionarioMap : Funcionario [];
   message = '';
+  cargoFuncionarioMap = [{"id": 1, "cargo": "Dev Front-End Jr"},
+           {"id": 2, "cargo": "Dev Back-end Senior"},
+           {"id": 3, "cargo": "Devops"},
+           {"id": 4, "cargo": "Analista de Sistemas"},
+  ]
+
+  listCidade = []
 
   constructor( private FormBuilder: FormBuilder, private homeService: HomeService) {
     this.FormFuncionarioMap = this.FormBuilder.group({
@@ -33,6 +40,7 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit() {
+  this.listar_cidade()
     
  }
 
@@ -47,9 +55,14 @@ export class HomeComponent implements OnInit {
 
  }
 
-
-
- //FUNCTION ISOLADAS
+ listar_cidade(){
+  this.homeService.list_cidade().subscribe((resp =>{
+    if(resp){
+      this.listCidade = resp;
+    }
+  }))
+ }
+//FUNCTION ISOLADAS
  limpar_form(){
   this.FormFuncionarioMap.reset()
  }

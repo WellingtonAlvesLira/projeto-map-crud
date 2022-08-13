@@ -9,6 +9,7 @@ import { Funcionario } from './funcionario';
 export class FuncionarioMapService {
   private readonly API = 'http://localhost:3000/funcionario';
 
+
   constructor(private http: HttpClient) { }
 
   list_funcionario(){
@@ -16,6 +17,7 @@ export class FuncionarioMapService {
       tap()
     )
   }
+
   
   delete_funcionario(id){
     return this.http.delete(`${this.API}/${id}`).pipe(

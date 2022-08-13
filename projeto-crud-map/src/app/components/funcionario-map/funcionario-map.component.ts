@@ -19,14 +19,13 @@ export class FuncionarioMapComponent implements OnInit {
 
   listar_funcionario(){
     this.funcionarioService.list_funcionario().subscribe(res => this.funcionarioMap = res)
+    
   }
 
   delete_funcionario(id,nome){
       this.funcionarioService.delete_funcionario(id).subscribe();
-      this.showMsg(nome);
       this.listar_funcionario();
-
-
+      this.showMsg(nome);
   }
 
   edit_funcionario(id){

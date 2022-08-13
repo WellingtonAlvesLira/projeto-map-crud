@@ -4,7 +4,7 @@
   </div>
 <table class="table">
   <thead>
-
+    <h5 class="text-center" *ngIf="funcionarioMap.length">Total de Funcionários: {{funcionarioMap.length}}</h5>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">NOME</th>
@@ -25,8 +25,8 @@
       <td>{{funcionario.cargo_funcionario}}</td>
       <td>{{funcionario.endereco_funcionario}}</td>
       <td>{{funcionario.cidade_funcionario}}</td>
-      <td><button (click)="delete_funcionario(funcionario.id, funcionario.nome_funcionario)">Deletar</button></td>
-      <td><button (click)="edit_funcionario(funcionario.id)">Editar</button></td>
+      <td><button class="primary" (click)="delete_funcionario(funcionario.id, funcionario.nome_funcionario)">Deletar</button></td>
+      <td><button class="d-inline" (click)="edit_funcionario(funcionario.id)">Editar</button></td>
 
 
       <!-- <td>{{funcionario.estado}}</td> -->
